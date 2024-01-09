@@ -3,10 +3,8 @@ package year2023
 fun main() {
     fun part1(input: List<String>): Int {
         val raceDurations = input.first()
-            .substringAfter(":")
             .cleanData()
         val distances = input.last()
-            .substringAfter(":")
             .cleanData()
 
         return raceDurations.mapIndexed { index, duration ->
@@ -20,12 +18,10 @@ fun main() {
 
     fun part2(input: List<String>): Int {
         val raceDurations = input.first()
-            .substringAfter(":")
             .cleanData()
             .joinToString("")
             .toLong()
         val distances = input.last()
-            .substringAfter(":")
             .cleanData()
             .joinToString("")
             .toLong()
@@ -48,6 +44,7 @@ fun main() {
 }
 
 fun String.cleanData(): List<String> = this
+    .substringAfter(":")
     .trim()
     .split(" ")
     .filter { it.isNotEmpty() || it == " " }
