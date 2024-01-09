@@ -12,7 +12,6 @@ fun main() {
         return raceDurations.mapIndexed { index, duration ->
             val distanceToBeat = distances[index].toInt()
             (0..duration.toInt())
-                .toList()
                 .count { result ->
                     ((duration.toInt() - result) * result) > distanceToBeat
                 }
